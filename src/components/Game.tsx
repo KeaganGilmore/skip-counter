@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useGameConfig } from '../hooks/useGameConfig';
 import './Game.css';
-
+import SkipCounter from './SkipCounter';
 export const Game: React.FC = () => {
     const { config, loading, error } = useGameConfig();
     const [score, setScore] = useState(0);
@@ -22,17 +22,7 @@ export const Game: React.FC = () => {
 
     return (
         <div className="game">
-            <h2>Current Score: {score}</h2>
-            <div className="question">
-                <p>{config?.currentQuestion}</p>
-            </div>
-            <input
-                type="text"
-                value={userAnswer}
-                onChange={(e) => setUserAnswer(e.target.value)}
-                placeholder="Your answer"
-            />
-            <button onClick={handleAnswerSubmit}>Submit Answer</button>
+            <SkipCounter />
         </div>
     );
 };
