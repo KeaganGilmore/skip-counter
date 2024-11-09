@@ -1,9 +1,8 @@
-// src/hooks/useFetchImages.ts
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { sendRequest } from './SendReq';
 import { useImageCache } from './useImageCache';
 import { ImageData } from '../models/models';
-import { fetchImage } from './imageFetch'; // Add this import
+import { fetchImage } from './imageFetch';
 
 interface FetchImagesProps {
     keyword: string;

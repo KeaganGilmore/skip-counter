@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Feedback from './Feedback';
+import { sendGameData } from '../utils/sendGameData';
+import { formatGameData } from '../utils/formatGameData';
+import { GameConfig } from '../types';
 
 const SkipCounterGame = ({ value = 6 }) => {
     const [gameStarted, setGameStarted] = useState(false);
@@ -135,20 +138,43 @@ const SkipCounterGame = ({ value = 6 }) => {
         for (let i = 0; i < responseTimes.length; i++) {
             const responseTime = responseTimes[i] - (previousTimestamp || 0);
             previousTimestamp = responseTimes[i];
-            stats.push({ expected_answer: value * (i + 1), given_answer: sequence[i + 1], response_time: responseTime });
+            stats.push({
+                expected_answer: value * (i + 1),
+                given_answer: sequence[i + 1],
+                response_time: responseTime
+            });
         }
         return stats;
     }
 
-    function postStats() {
+    async function postStats() {
+        if (startTime === null) {
+            console.error('Start time is null');
+            return;
+        }
+
         const postData = {
             description: `Skip Counting by ${value}'s`,
             start_time: startTime,
             stats: collateStats()
         };
-        localStorage.setItem(`skip-counting-${value}`, JSON.stringify(postData));
-    }
+        console.log('Game data saved to local storage:', postData);
 
+        // Format the game data
+        const gameConfig: GameConfig = {
+            gameType: 'skip-counting',
+            difficulty: 'medium',
+            seed: localStorage.getItem('gameSeed') || '', // Retrieve the actual seed
+        };
+        const formattedGameData = formatGameData(gameConfig, sequence, responseTimes, value, startTime);
+
+        // Send the game data
+        try {
+            await sendGameData(formattedGameData);
+        } catch (error) {
+            console.error('Failed to send game data:', error);
+        }
+    }
     const startGame = () => {
         setGameStarted(true);
         setTimer(0);
@@ -172,20 +198,15 @@ const SkipCounterGame = ({ value = 6 }) => {
             setSequence(prev => [...prev, userNumber.toString()]);
             setImageCount(prev => prev + 1);
 
-            if (currentStep === 12) {
-                if (timerRef.current) {
-                    clearInterval(timerRef.current);
-                }
+            if (currentStep === 2) {
                 setGameComplete(true);
-                setGameStarted(false);
-                postStats();
+                postStats(); // Call postStats when the game is complete
             }
         } else {
             setSequence(prev => [...prev, `${userNumber}`]);
         }
         setUserInput('');
     };
-
     return (
         <div style={styles.wrapper}>
             <div style={styles.gameArea}>

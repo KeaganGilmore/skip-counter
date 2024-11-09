@@ -1,4 +1,4 @@
-// src/utils/tokenUtils.ts
+// src/utils.ts/tokenUtils.ts
 import { jwtDecode } from 'jwt-decode';
 
 interface DecodedToken {

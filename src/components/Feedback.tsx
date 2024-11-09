@@ -14,6 +14,13 @@ function Feedback({ imageSize, activeIndex, value, sequence }: FeedbackProps) {
     const { images, imageURLs, status } = useFetchImages({ keyword: numberString, secondaryKeywords: ["skip counting"] });
 
     useEffect(() => {
+        console.log('Fetching images...');
+        if (status === 'completed') {
+            console.log('Images fetched:', images);
+        }
+    }, [status, images]);
+
+    useEffect(() => {
         const data: { right: string; bottom: string; isActive: boolean; isCorrect: boolean | null }[] = [];
         if (imageSize && activeIndex !== null && status === 'completed') {
             for (let i = 0; i < 12; i++) {
@@ -30,7 +37,7 @@ function Feedback({ imageSize, activeIndex, value, sequence }: FeedbackProps) {
             }
             setDisplayData(data);
         }
-    }, [imageSize, activeIndex, status]);
+    }, [imageSize, activeIndex, status, sequence, value]);
 
     const styles = {
         wrapper: {
@@ -56,7 +63,7 @@ function Feedback({ imageSize, activeIndex, value, sequence }: FeedbackProps) {
                         </div>
                     </div>
                 ))
-                : null
+                : <div>Loading images...</div>
             }
         </div>
     );

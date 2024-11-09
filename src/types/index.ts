@@ -12,7 +12,8 @@ export interface GameConfig {
     difficulty: string;
     timeLimit?: number;
     images?: ImageAsset[];
-    currentQuestion?: string; // Add this line
+    currentQuestion?: string;
+    seed: string; // Add this line
 }
 export interface ImageAsset {
     id: string;
@@ -23,4 +24,17 @@ export interface ImageAsset {
 export interface ApiResponse {
     success: boolean;
     data: GameConfig;
+}
+
+export interface Question {
+    content: string;
+    answer_expected: string;
+    answer_given: string;
+    pass: boolean;
+    response_time: number;
+}
+
+export interface GameData {
+    seed: string;
+    questions: Question[];
 }

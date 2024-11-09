@@ -25,15 +25,20 @@ export const getToken = (): string | null => {
 
         // Get from cookie
         const tokenFromCookie = Cookies.get(COOKIE_NAME);
-
-        // Verify both tokens match
         if (tokenFromStorage && tokenFromCookie && tokenFromStorage === tokenFromCookie) {
             return tokenFromStorage;
-        } else {
-            console.warn('Token mismatch detected. Clearing all tokens for security.');
-            clearToken();
-            return null;
         }
+
+        // If only one token exists, return it
+        if (tokenFromStorage) {
+            return tokenFromStorage;
+        }
+        if (tokenFromCookie) {
+            return tokenFromCookie;
+        }
+
+        // If no tokens exist, return null
+        return null;
     } catch (error) {
         console.error('Failed to retrieve token:', error);
         return null;

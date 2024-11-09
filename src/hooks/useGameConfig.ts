@@ -18,6 +18,9 @@ export const useGameConfig = () => {
                     throw new Error('No seed provided');
                 }
 
+                // Save the seed in local storage
+                localStorage.setItem('gameSeed', seed);
+
                 const gameConfig = await decryptGameSeed(seed);
                 setConfig(gameConfig);
             } catch (err) {

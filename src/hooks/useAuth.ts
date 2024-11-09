@@ -1,5 +1,6 @@
 // src/hooks/useAuth.ts
 import { useState, useEffect } from 'react';
+import { saveToken } from '../utils/authDB';
 
 export const useAuth = () => {
     const [token, setToken] = useState<string | null>(null);
@@ -10,7 +11,7 @@ export const useAuth = () => {
             const params = new URLSearchParams(window.location.search);
             const urlToken = params.get('token');
             if (urlToken) {
-                localStorage.setItem('gameToken', urlToken);
+                saveToken(urlToken);
                 setToken(urlToken);
             } else {
                 setError('No token found in URL');

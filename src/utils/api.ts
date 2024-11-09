@@ -1,4 +1,4 @@
-// src/utils/api.ts
+// src/utils.ts/api.ts
 import { SLIDES_MICROSERVICE_URL } from '../config';
 import type { GameConfig, ApiResponse } from '../types';
 
@@ -21,26 +21,4 @@ export const decryptGameSeed = async (seed: string): Promise<GameConfig> => {
 
     const data: ApiResponse = await response.json();
     return data.data;
-};
-
-export const submitGameResults = async (results: {
-    score: number;
-    question: string;
-    answer: string;
-}) => {
-    const token = localStorage.getItem('gameToken');
-    const response = await fetch(`${API_BASE_URL}/submit-results`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify(results),
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to submit game results');
-    }
-
-    return response.json();
 };
