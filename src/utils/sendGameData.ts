@@ -1,5 +1,5 @@
 // src/utils/sendGameData.ts
-import { sendRequestV3 } from '../hooks/SendReq';
+import { sendRequest } from '../hooks/SendReq';
 import { GameData } from '../types';
 
 export const sendGameData = async (gameData: GameData) => {
@@ -10,8 +10,8 @@ export const sendGameData = async (gameData: GameData) => {
             gameData.seed = seed;
         }
 
-        const response = await sendRequestV3({
-            endpoint: '/save-game-details',
+        const response = await sendRequest({
+            endpoint: '/games_details',
             method: 'POST',
             body: JSON.stringify(gameData),
         });

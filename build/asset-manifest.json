@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.fb22ef2b.css",
-    "main.js": "/react-gh-pages/static/js/main.4f88e62c.js",
-    "static/js/453.55c15a21.chunk.js": "/react-gh-pages/static/js/453.55c15a21.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.fb22ef2b.css.map": "/react-gh-pages/static/css/main.fb22ef2b.css.map",
-    "main.4f88e62c.js.map": "/react-gh-pages/static/js/main.4f88e62c.js.map",
-    "453.55c15a21.chunk.js.map": "/react-gh-pages/static/js/453.55c15a21.chunk.js.map"
+    "main.css": "/React-Game-Template/static/css/main.fb22ef2b.css",
+    "main.js": "/React-Game-Template/static/js/main.defd77c1.js",
+    "static/js/453.55c15a21.chunk.js": "/React-Game-Template/static/js/453.55c15a21.chunk.js",
+    "index.html": "/React-Game-Template/index.html",
+    "main.fb22ef2b.css.map": "/React-Game-Template/static/css/main.fb22ef2b.css.map",
+    "main.defd77c1.js.map": "/React-Game-Template/static/js/main.defd77c1.js.map",
+    "453.55c15a21.chunk.js.map": "/React-Game-Template/static/js/453.55c15a21.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb22ef2b.css",
-    "static/js/main.4f88e62c.js"
+    "static/js/main.defd77c1.js"
   ]
 }
