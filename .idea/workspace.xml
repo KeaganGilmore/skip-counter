@@ -8,15 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.fb22ef2b.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/css/main.fb22ef2b.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.fb22ef2b.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/css/main.fb22ef2b.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/453.55c15a21.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/453.55c15a21.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.4f88e62c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.4f88e62c.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.4f88e62c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/urls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/urls.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.defd77c1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.defd77c1.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.defd77c1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Careers/LXLibrary/Coding_and_Design/GameDev/skip-counter/src&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Careers\\LXLibrary\\Coding_and_Design\\GameDev\\skip-counter\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Careers/LXLibrary/Coding_and_Design/GameDev/skip-counter/src",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.deploy.executor": "Run",
+    "npm.start.executor": "Run",
+    "ts.external.directory.path": "D:\\Careers\\LXLibrary\\Coding_and_Design\\GameDev\\skip-counter\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Careers\LXLibrary\Coding_and_Design\GameDev\skip-counter\src" />
@@ -85,7 +82,27 @@
       <recent name="D:\Careers\LXLibrary\Coding_and_Design\GameDev\skip-counter\src\utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.deploy">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -96,6 +113,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.deploy" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -120,6 +142,7 @@
       <workItem from="1731058129275" duration="17330000" />
       <workItem from="1731240805246" duration="385000" />
       <workItem from="1731413742186" duration="101000" />
+      <workItem from="1731510349238" duration="475000" />
     </task>
     <servers />
   </component>
